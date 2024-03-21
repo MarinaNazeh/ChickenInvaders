@@ -8,7 +8,7 @@
 enemy::enemy()
 {
     //Creating enemy
-    QPixmap pixmap2("C:\\Users\\mahin\\Desktop\\Uni\\Spring 2024\\CS 2 Lab\\Assignments\\Assignment 2\\Assignment 2\\ChickenInvaders\\ChickenInvaders\\BigChicken.png");
+    QPixmap pixmap2("/Users/mac/ChickenInvaders/ChickenInvaders/BigChicken.png");
     pixmap2 = pixmap2.scaledToWidth(75);
     pixmap2 = pixmap2.scaledToHeight(75);
     this->setPixmap(pixmap2);
