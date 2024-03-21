@@ -1,12 +1,12 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'player.h'
+** Meta object code from reading C++ file 'enemy.h'
 **
 ** Created by: The Qt Meta Object Compiler version 68 (Qt 6.6.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../ChickenInvaders/player.h"
+#include "../../ChickenInvaders/enemy.h"
 #include <QtCore/qmetatype.h>
 
 #if __has_include(<QtCore/qtmochelpers.h>)
@@ -19,7 +19,7 @@ QT_BEGIN_MOC_NAMESPACE
 #include <memory>
 
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'player.h' doesn't include <QObject>."
+#error "The header file 'enemy.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
 #error "This file was generated using the moc from 6.6.2. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -36,36 +36,36 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASSPlayerENDCLASS_t {};
-constexpr auto qt_meta_stringdata_CLASSPlayerENDCLASS = QtMocHelpers::stringData(
-    "Player",
-    "createEnemy",
+struct qt_meta_stringdata_CLASSenemyENDCLASS_t {};
+constexpr auto qt_meta_stringdata_CLASSenemyENDCLASS = QtMocHelpers::stringData(
+    "enemy",
+    "move",
     ""
 );
 #else  // !QT_MOC_HAS_STRING_DATA
-struct qt_meta_stringdata_CLASSPlayerENDCLASS_t {
+struct qt_meta_stringdata_CLASSenemyENDCLASS_t {
     uint offsetsAndSizes[6];
-    char stringdata0[7];
-    char stringdata1[12];
+    char stringdata0[6];
+    char stringdata1[5];
     char stringdata2[1];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_CLASSPlayerENDCLASS_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_CLASSPlayerENDCLASS_t qt_meta_stringdata_CLASSPlayerENDCLASS = {
+    uint(sizeof(qt_meta_stringdata_CLASSenemyENDCLASS_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CLASSenemyENDCLASS_t qt_meta_stringdata_CLASSenemyENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 6),  // "Player"
-        QT_MOC_LITERAL(7, 11),  // "createEnemy"
-        QT_MOC_LITERAL(19, 0)   // ""
+        QT_MOC_LITERAL(0, 5),  // "enemy"
+        QT_MOC_LITERAL(6, 4),  // "move"
+        QT_MOC_LITERAL(11, 0)   // ""
     },
-    "Player",
-    "createEnemy",
+    "enemy",
+    "move",
     ""
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASSPlayerENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSenemyENDCLASS[] = {
 
  // content:
       12,       // revision
@@ -87,50 +87,50 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSPlayerENDCLASS[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject Player::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject enemy::staticMetaObject = { {
     QMetaObject::SuperData::link<QObject::staticMetaObject>(),
-    qt_meta_stringdata_CLASSPlayerENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASSPlayerENDCLASS,
+    qt_meta_stringdata_CLASSenemyENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSenemyENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSPlayerENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSenemyENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<Player, std::true_type>,
-        // method 'createEnemy'
+        QtPrivate::TypeAndForceComplete<enemy, std::true_type>,
+        // method 'move'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
 
-void Player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void enemy::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        auto *_t = static_cast<Player *>(_o);
+        auto *_t = static_cast<enemy *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->createEnemy(); break;
+        case 0: _t->move(); break;
         default: ;
         }
     }
     (void)_a;
 }
 
-const QMetaObject *Player::metaObject() const
+const QMetaObject *enemy::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *Player::qt_metacast(const char *_clname)
+void *enemy::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASSPlayerENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSenemyENDCLASS.stringdata0))
         return static_cast<void*>(this);
     if (!strcmp(_clname, "QGraphicsPixmapItem"))
         return static_cast< QGraphicsPixmapItem*>(this);
     return QObject::qt_metacast(_clname);
 }
 
-int Player::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int enemy::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QObject::qt_metacall(_c, _id, _a);
     if (_id < 0)

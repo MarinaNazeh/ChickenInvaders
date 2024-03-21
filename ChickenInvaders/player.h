@@ -11,8 +11,10 @@ class Player: public QObject, public QGraphicsPixmapItem
      Q_OBJECT
 public:
     Player();
-public slots:
     void keyPressEvent(QKeyEvent * event);
+public slots:
+    void createEnemy();
+
 
 };
 
