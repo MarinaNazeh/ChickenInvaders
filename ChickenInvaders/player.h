@@ -6,7 +6,7 @@
 #include <QGraphicsTextItem>
 #include <QKeyEvent>
 
-class Player: public QObject,public QGraphicsPixmapItem
+class Player: public QObject, public QGraphicsPixmapItem
 {
      Q_OBJECT
 public:
