@@ -1,5 +1,6 @@
 #ifndef ENEMY_H
 #define ENEMY_H
+#include "player.h"
 #include <QGraphicsPixmapItem>
 #include <QObject>
 

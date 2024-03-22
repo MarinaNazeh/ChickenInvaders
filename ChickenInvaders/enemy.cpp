@@ -1,4 +1,6 @@
 #include "enemy.h"
+#include "player.h"
+#include "healthandscore.h"
 #include <stdlib.h>
 #include <QTimer>
 #include <QDebug>
@@ -24,8 +26,14 @@ enemy::enemy()
     qDebug()<<"inside constructor";
 }
 
-void enemy:: move()
+void enemy::move()
 {
     this->setPos(x(),y()+5);
+    if (y()+75 > 600)
+    {
+        scene()->removeItem(this); //remove enemy when it reaches bottom
+        delete this;
+        health->setPlainText("Health: " + QString::number(--healthValue)); //update health
+    }
 }
 

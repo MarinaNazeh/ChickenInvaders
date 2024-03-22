@@ -4,6 +4,9 @@
 #include <QGraphicsPixmapItem>
 #include "player.h"
 #include "enemy.h"
+#include "bullet.h"
+#include "healthandscore.h"
+
 
 Player::Player()
 {
@@ -19,21 +22,41 @@ Player::Player()
 
 void Player::keyPressEvent(QKeyEvent * event)
 {
+
     if (event->key() == Qt::Key_Left)
     {
+        if(x()>30)
+        {
         setPos(x()-30, y());
+        }
     }
     else if (event->key() == Qt::Key_Right)
     {
+        if(x()<800-100)
+        {
         setPos(x()+30, y());
+        }
     }
     else if (event->key() == Qt::Key_Up)
     {
+        if(y()>20)
+        {
         setPos(x(), y()-30);
+        }
     }
     else if (event->key() == Qt::Key_Down)
     {
+        if(y()<600-90)
+        {
         setPos(x(), y()+30);
+        }
+    }
+    else if(event->key()== Qt::Key_Space)
+    {
+        bullet * b = new bullet();
+        b->setPos(x(),y());
+        scene()->addItem(b);
+
     }
 
 }
@@ -43,3 +66,4 @@ void Player::createEnemy()
    enemy * chicken = new enemy();
    scene()->addItem(chicken);
 }
+
