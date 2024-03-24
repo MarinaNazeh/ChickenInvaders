@@ -9,6 +9,8 @@
 #include <QDebug>
 #include "player.h"
 #include "healthandscore.h"
+#include <QMessageBox>
+#include <QBrush>
 
 int main(int argc, char *argv[])
 {
@@ -50,6 +52,11 @@ int main(int argc, char *argv[])
     QTimer * time = new QTimer();
     QObject::connect(time, SIGNAL(timeout()),player,SLOT(createEnemy()));
     time->start(2000);
+
+
+    scene.setBackgroundBrush(QBrush(QImage("/Users/mac/ChickenInvaders/ChickenInvaders/background.jpeg")));
+
+
 
     view.show();
     return a.exec();
