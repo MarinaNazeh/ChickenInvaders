@@ -6,12 +6,13 @@
 #include "enemy.h"
 #include "bullet.h"
 #include "healthandscore.h"
-
+#include <QMediaPlayer>
+#include <QtMultimedia>
 
 Player::Player()
 {
     //Creating the player
-    QPixmap pixmap1("C:\\Users\\mahin\\Desktop\\Uni\\Spring 2024\\CS 2 Lab\\Assignments\\Assignment 2\\Assignment 2\\ChickenInvaders\\ChickenInvaders\\ship.PNG");
+    QPixmap pixmap1(":/ship.PNG");
     pixmap1 = pixmap1.scaledToWidth(75);
     pixmap1 = pixmap1.scaledToHeight(75);
     this->setPixmap(pixmap1);
@@ -22,7 +23,7 @@ Player::Player()
 
 void Player::keyPressEvent(QKeyEvent * event)
 {
-
+    //handling key presses
     if (event->key() == Qt::Key_Left)
     {
         if(x()>30)
@@ -54,16 +55,25 @@ void Player::keyPressEvent(QKeyEvent * event)
     else if(event->key()== Qt::Key_Space)
     {
         bullet * b = new bullet();
-        b->setPos(x(),y());
+        b->setPos(x()+38,y()-70);
         scene()->addItem(b);
+
+        QMediaPlayer * bulletSound = new QMediaPlayer; //playing sound when bullet is emitted
+        bulletSound->setSource(QUrl(":/bulletsound.mp3"));
+        bulletSound->play();
 
     }
 
 }
 
+
+
 void Player::createEnemy()
 {
-   enemy * chicken = new enemy();
-   scene()->addItem(chicken);
+    if (healthValue>=1) //to stop creating enemies when game is over
+    {
+       enemy * chicken = new enemy();
+       scene()->addItem(chicken);
+    }
 }
 

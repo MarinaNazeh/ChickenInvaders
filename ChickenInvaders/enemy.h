@@ -3,10 +3,12 @@
 #include "player.h"
 #include <QGraphicsPixmapItem>
 #include <QObject>
-
+#include <QTimer>
 class enemy : public QObject, public QGraphicsPixmapItem
 {
 Q_OBJECT
+
+QTimer * timer = new QTimer();
 public:
     enemy();
 
