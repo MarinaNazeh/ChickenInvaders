@@ -45,7 +45,7 @@ void bullet::move()
     }
 
     this->setPos(x(),y()-10);
-    if(y()+75 < 0)
+    if(y() < 0)
     {
         scene()->removeItem(this); //remove bullet when reaches top
         delete this;
