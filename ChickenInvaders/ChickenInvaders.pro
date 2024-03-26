@@ -1,5 +1,5 @@
-QT       += core gui \
-            multimedia
+QT       += core gui
+QT       += multimedia
 
 
 

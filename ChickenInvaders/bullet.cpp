@@ -9,6 +9,7 @@
 #include <QGraphicsTextItem>
 #include <QTimer>
 #include <QMediaPlayer>
+#include <QAudioOutput>
 
 
 bullet::bullet()
@@ -42,8 +43,12 @@ void bullet::move()
             delete coliding_items[i];
             delete this;
             score->setPlainText("Score: " + QString::number(++scoreValue)); //updates score
-            QMediaPlayer * destroyEnemy = new QMediaPlayer; //to play sound when enemy is destroyed
-            destroyEnemy->setSource(QUrl("qrc:/DestroyingEnemySound.mp3"));
+
+            QAudioOutput * destroyEnemyoutput = new QAudioOutput();
+            destroyEnemyoutput->setVolume(50);
+            QMediaPlayer * destroyEnemy = new QMediaPlayer(); //to play sound when enemy is destroyed
+            destroyEnemy->setAudioOutput(destroyEnemyoutput);
+            destroyEnemy->setSource(QUrl(":/DestroyingEnemySound.mp3"));
             destroyEnemy->play();
 
             return;

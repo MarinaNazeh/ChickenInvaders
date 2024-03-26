@@ -7,7 +7,7 @@
 #include "bullet.h"
 #include "healthandscore.h"
 #include <QMediaPlayer>
-#include <QtMultimedia>
+#include <QAudioOutput>
 
 Player::Player()
 {
@@ -58,7 +58,10 @@ void Player::keyPressEvent(QKeyEvent * event)
         b->setPos(x()+38,y()-70);
         scene()->addItem(b);
 
+        QAudioOutput * bulletSoundoutput = new QAudioOutput();
+        bulletSoundoutput->setVolume(100);
         QMediaPlayer * bulletSound = new QMediaPlayer; //playing sound when bullet is emitted
+        bulletSound->setAudioOutput(bulletSoundoutput);
         bulletSound->setSource(QUrl(":/bulletsound.mp3"));
         bulletSound->play();
 
