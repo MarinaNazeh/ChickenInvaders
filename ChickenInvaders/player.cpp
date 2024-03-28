@@ -9,6 +9,7 @@
 #include <QMediaPlayer>
 #include <QAudioOutput>
 
+
 Player::Player()
 {
     //Creating the player
@@ -17,6 +18,7 @@ Player::Player()
     pixmap1 = pixmap1.scaledToHeight(75);
     this->setPixmap(pixmap1);
     this->setPos(400,500); //setting position to bottom centre
+
 
 }
 
@@ -58,11 +60,12 @@ void Player::keyPressEvent(QKeyEvent * event)
         b->setPos(x()+38,y()-70);
         scene()->addItem(b);
 
+        //playing sound when bullet is emitted
         QAudioOutput * bulletSoundoutput = new QAudioOutput();
-        bulletSoundoutput->setVolume(100);
-        QMediaPlayer * bulletSound = new QMediaPlayer; //playing sound when bullet is emitted
+        bulletSoundoutput->setVolume(10);
+        QMediaPlayer * bulletSound = new QMediaPlayer;
         bulletSound->setAudioOutput(bulletSoundoutput);
-        bulletSound->setSource(QUrl(":/bulletsound.mp3"));
+        bulletSound->setSource(QUrl("qrc:/bulletsound.mp3"));
         bulletSound->play();
 
     }

@@ -11,7 +11,6 @@
 #include <QMediaPlayer>
 #include <QAudioOutput>
 
-
 bullet::bullet()
 {
     //bullet picture
@@ -44,13 +43,13 @@ void bullet::move()
             delete this;
             score->setPlainText("Score: " + QString::number(++scoreValue)); //updates score
 
+            //to play sound when enemy is destroyed
             QAudioOutput * destroyEnemyoutput = new QAudioOutput();
-            destroyEnemyoutput->setVolume(50);
-            QMediaPlayer * destroyEnemy = new QMediaPlayer(); //to play sound when enemy is destroyed
+            destroyEnemyoutput->setVolume(10);
+            QMediaPlayer * destroyEnemy = new QMediaPlayer();
             destroyEnemy->setAudioOutput(destroyEnemyoutput);
-            destroyEnemy->setSource(QUrl(":/DestroyingEnemySound.mp3"));
+            destroyEnemy->setSource(QUrl("qrc:/DestroyingEnemySound.mp3"));
             destroyEnemy->play();
-
             return;
         }
     }
